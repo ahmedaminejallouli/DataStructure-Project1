@@ -1,0 +1,310 @@
+# CS341 tests for 2A Fencing the Pasture
+# Format is described in README.md. Tags: basic, edge, random, large.
+
+case: example from the problem sheet
+tags: basic
+grid: 4 4
+0 1 1 0
+1 1 0 0
+0 1 1 1
+0 0 1 0
+expect: 18
+
+case: 1x1 grid, single plot
+tags: edge
+grid: 1 1
+1
+expect: 4
+
+case: single plot in a corner of a larger map
+tags: edge
+grid: 3 3
+1 0 0
+0 0 0
+0 0 0
+expect: 4
+
+case: single plot in the middle
+tags: edge
+grid: 3 3
+0 0 0
+0 1 0
+0 0 0
+expect: 4
+
+case: single row, all pasture
+tags: edge
+grid: 1 5
+1 1 1 1 1
+expect: 12
+
+case: single column, all pasture
+tags: edge
+grid: 5 1
+1
+1
+1
+1
+1
+expect: 12
+
+case: single row, pasture in the middle
+tags: edge
+grid: 1 5
+0 0 1 1 0
+expect: 6
+
+case: 2x2 all pasture
+tags: edge
+grid: 2 2
+1 1
+1 1
+expect: 8
+
+case: 3x3 all pasture
+tags: edge
+grid: 3 3
+1 1 1
+1 1 1
+1 1 1
+expect: 12
+
+case: plus shape
+tags: edge
+grid: 3 3
+0 1 0
+1 1 1
+0 1 0
+expect: 12
+
+case: L shape touching two borders
+tags: edge
+grid: 4 4
+1 0 0 0
+1 0 0 0
+1 0 0 0
+1 1 1 1
+expect: 16
+
+case: U shape (the gap is open, not a hole)
+tags: edge
+grid: 3 3
+1 0 1
+1 0 1
+1 1 1
+expect: 16
+
+case: staircase
+tags: edge
+grid: 4 4
+1 1 0 0
+0 1 1 0
+0 0 1 1
+0 0 0 1
+expect: 16
+
+case: comb shape
+tags: edge
+grid: 3 5
+1 1 1 1 1
+1 0 1 0 1
+1 0 1 0 1
+expect: 24
+
+case: pasture fills the whole map except corners
+tags: edge
+grid: 4 4
+0 1 1 0
+1 1 1 1
+1 1 1 1
+0 1 1 0
+expect: 16
+
+case: random small #1
+tags: random
+grid: 4 3
+1 1 0
+1 1 0
+0 1 0
+0 0 0
+expect: 10
+
+case: random small #2
+tags: random
+grid: 4 2
+0 0
+0 0
+0 1
+0 0
+expect: 4
+
+case: random small #3
+tags: random
+grid: 3 5
+1 1 1 1 1
+1 1 1 1 1
+1 1 1 1 1
+expect: 16
+
+case: random small #4
+tags: random
+grid: 3 8
+0 0 0 0 0 1 1 0
+0 0 0 0 1 1 1 0
+0 0 0 0 0 0 0 0
+expect: 10
+
+case: random small #5
+tags: random
+grid: 6 6
+0 0 1 1 0 0
+0 0 1 1 0 0
+0 0 1 1 1 1
+0 0 1 1 1 1
+0 0 0 1 0 0
+0 0 1 1 0 0
+expect: 22
+
+case: random small #6
+tags: random
+grid: 8 3
+0 0 0
+0 0 0
+0 0 0
+0 0 0
+1 1 1
+1 1 0
+1 1 1
+1 1 1
+expect: 16
+
+case: random small #7
+tags: random
+grid: 6 3
+0 0 0
+1 1 0
+1 1 1
+1 1 1
+1 1 1
+1 1 1
+expect: 16
+
+case: random small #8
+tags: random
+grid: 3 6
+1 1 1 1 1 1
+1 1 1 1 1 1
+1 1 1 1 1 1
+expect: 18
+
+case: random small #9
+tags: random
+grid: 4 3
+1 1 1
+0 1 1
+0 1 1
+0 0 0
+expect: 12
+
+case: random small #10
+tags: random
+grid: 4 1
+1
+1
+1
+1
+expect: 10
+
+case: random small #11
+tags: random
+grid: 6 2
+0 0
+0 0
+1 1
+1 1
+1 0
+1 0
+expect: 12
+
+case: random small #12
+tags: random
+grid: 5 1
+0
+1
+0
+0
+0
+expect: 4
+
+case: random small #13
+tags: random
+grid: 3 2
+0 0
+1 0
+0 0
+expect: 4
+
+case: random small #14
+tags: random
+grid: 3 6
+0 1 1 1 1 1
+0 0 1 1 1 0
+0 0 0 1 0 0
+expect: 16
+
+case: random small #15
+tags: random
+grid: 2 4
+0 0 0 1
+0 0 0 0
+expect: 4
+
+case: random small #16
+tags: random
+grid: 1 1
+1
+expect: 4
+
+case: random small #17
+tags: random
+grid: 4 7
+1 1 1 0 0 0 0
+1 1 1 1 0 0 0
+1 0 0 0 0 0 0
+1 0 0 0 0 0 0
+expect: 16
+
+case: random small #18
+tags: random
+grid: 7 1
+1
+0
+0
+0
+0
+0
+0
+expect: 4
+
+case: random small #19
+tags: random
+grid: 8 8
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 1 0 0 0
+0 0 0 0 1 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+expect: 6
+
+case: random small #20
+tags: random
+grid: 5 3
+0 0 0
+0 0 0
+0 0 0
+0 0 0
+1 0 0
+expect: 4

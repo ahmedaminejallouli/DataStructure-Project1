@@ -1,0 +1,22 @@
+# CS341 tests for 1A Tea Urn Rush (large inputs, optimized solution only)
+# Format is described in README.md. Tags: basic, edge, random, large.
+
+case: large: one million of each
+tags: large
+orders: 1000000 1000000 1000000
+expect: 1500000
+
+case: large: one drink only
+tags: large
+orders: 1000000 0 0
+expect: 1000000
+
+case: large: nearly dominant
+tags: large
+orders: 999999 1000000 1
+expect: 1000000
+
+case: large: odd total, balanced
+tags: large
+orders: 999999 999999 999999
+expect: 1499999

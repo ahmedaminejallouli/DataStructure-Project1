@@ -1,0 +1,242 @@
+# CS341 tests for 1B Two Floodwalls
+# Format is described in README.md. Tags: basic, edge, random, large.
+
+case: example from the problem sheet
+tags: basic
+walls: 2 7 3 1 6 4 2 5
+expect: 30
+
+case: minimum size, two walls
+tags: edge
+walls: 1 1
+expect: 1
+
+case: two walls, different heights
+tags: edge
+walls: 2 1
+expect: 1
+
+case: two walls of height zero
+tags: edge
+walls: 0 0
+expect: 0
+
+case: one wall has height zero
+tags: edge
+walls: 0 5
+expect: 0
+
+case: all walls zero
+tags: edge
+walls: 0 0 0 0
+expect: 0
+
+case: all walls equal, the ends win
+tags: edge
+walls: 3 3 3 3 3
+expect: 12
+
+case: middle wall is irrelevant
+tags: edge
+walls: 5 0 5
+expect: 10
+
+case: zeros between two tall walls
+tags: edge
+walls: 4 0 0 4
+expect: 12
+
+case: tall inner pair beats the ends
+tags: edge
+walls: 1 100 100 1
+expect: 100
+
+case: short ends, far apart, still win
+tags: edge
+walls: 5 1 1 1 1 5
+expect: 25
+
+case: strictly increasing
+tags: edge
+walls: 1 2 3 4 5 6 7 8 9 10
+expect: 25
+
+case: strictly decreasing
+tags: edge
+walls: 10 9 8 7 6 5 4 3 2 1
+expect: 25
+
+case: mountain shape
+tags: edge
+walls: 1 3 5 7 9 7 5 3 1
+expect: 20
+
+case: valley shape
+tags: edge
+walls: 9 7 5 3 1 3 5 7 9
+expect: 72
+
+case: maximum height walls
+tags: edge
+walls: 10000 10000
+expect: 10000
+
+case: pointer trap: moving the taller side loses the answer
+tags: edge
+walls: 1 2 4 3
+expect: 4
+
+case: equal-height ends with a taller wall inside
+tags: edge
+walls: 6 2 9 3 6
+expect: 24
+
+case: random small #1
+tags: random
+walls: 8 1 11
+expect: 16
+
+case: random small #2
+tags: random
+walls: 14 20 15 18 2 6 7 4 0
+expect: 42
+
+case: random small #3
+tags: random
+walls: 5 18 5 10 6 6 11 17 15 11 4 14 8 19
+expect: 216
+
+case: random small #4
+tags: random
+walls: 3 6 9 19 16 20 11 7 13 14 3 17
+expect: 136
+
+case: random small #5
+tags: random
+walls: 20 17 1 19 13 11 8 15 4 16 8 17 13 8
+expect: 187
+
+case: random small #6
+tags: random
+walls: 7 6 0 15 19 14 7 6 4 17 1 3 14 7
+expect: 126
+
+case: random small #7
+tags: random
+walls: 5 16
+expect: 5
+
+case: random small #8
+tags: random
+walls: 17 20 16 6 5 13 10 5 10 2
+expect: 80
+
+case: random small #9
+tags: random
+walls: 10 4 17 9 0 16 6 5 10 7 8 17 0 19
+expect: 187
+
+case: random small #10
+tags: random
+walls: 19 13 13 11 14 10 16 11 0 9 16 17 18 3
+expect: 216
+
+case: random small #11
+tags: random
+walls: 8 16 14 9 19
+expect: 48
+
+case: random small #12
+tags: random
+walls: 13 3 5 3 6 6 19
+expect: 78
+
+case: random small #13
+tags: random
+walls: 15 9 2 10 7
+expect: 30
+
+case: random small #14
+tags: random
+walls: 4 0
+expect: 0
+
+case: random small #15
+tags: random
+walls: 8 10 7 19 2 15 5
+expect: 40
+
+case: random small #16
+tags: random
+walls: 18 3
+expect: 3
+
+case: random small #17
+tags: random
+walls: 11 3 17 20 13 0 17 13 10 12 12 4 13 4 7
+expect: 132
+
+case: random small #18
+tags: random
+walls: 10 20 9 18 1 11 4
+expect: 50
+
+case: random small #19
+tags: random
+walls: 15 20 13 16
+expect: 45
+
+case: random small #20
+tags: random
+walls: 12 9 0 16 4 17 1 1
+expect: 60
+
+case: random small #21
+tags: random
+walls: 4 8 17 6 16 19 5
+expect: 51
+
+case: random small #22
+tags: random
+walls: 13 2
+expect: 2
+
+case: random small #23
+tags: random
+walls: 13 1 20
+expect: 26
+
+case: random small #24
+tags: random
+walls: 17 20 6 10 7 14 5 7 20 2 14
+expect: 140
+
+case: random small #25
+tags: random
+walls: 2 12 3 4 7 18 6 2 15 11 14 13 18 1
+expect: 132
+
+case: random small #26
+tags: random
+walls: 9 16 6 3 5
+expect: 20
+
+case: random small #27
+tags: random
+walls: 10 3 4 3 1 13 19 13 15 5 20
+expect: 100
+
+case: random small #28
+tags: random
+walls: 5 3 10 4 7 7 20 1 15 19 6
+expect: 70
+
+case: random small #29
+tags: random
+walls: 3 3 18 17 3 18 7 13 3 18 19 9
+expect: 144
+
+case: random small #30
+tags: random
+walls: 0 9 18 1 17
+expect: 34

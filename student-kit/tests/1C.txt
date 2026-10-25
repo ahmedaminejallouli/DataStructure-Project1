@@ -1,0 +1,242 @@
+# CS341 tests for 1C Rooftop Puddles
+# Format is described in README.md. Tags: basic, edge, random, large.
+
+case: example from the problem sheet
+tags: basic
+heights: 3 0 2 0 4 1 2
+expect: 8
+
+case: single building
+tags: edge
+heights: 5
+expect: 0
+
+case: two buildings
+tags: edge
+heights: 3 3
+expect: 0
+
+case: flat street at height zero
+tags: edge
+heights: 0 0 0
+expect: 0
+
+case: flat street
+tags: edge
+heights: 2 2 2 2
+expect: 0
+
+case: strictly increasing, all water runs off
+tags: edge
+heights: 1 2 3 4 5
+expect: 0
+
+case: strictly decreasing, all water runs off
+tags: edge
+heights: 5 4 3 2 1
+expect: 0
+
+case: mountain, nothing is held
+tags: edge
+heights: 1 2 3 2 1
+expect: 0
+
+case: simple bowl
+tags: edge
+heights: 3 0 3
+expect: 3
+
+case: lower right wall limits the water
+tags: edge
+heights: 3 0 1
+expect: 1
+
+case: zero-height ends
+tags: edge
+heights: 0 3 0 3 0
+expect: 3
+
+case: wide pool
+tags: edge
+heights: 5 0 0 0 0 5
+expect: 20
+
+case: several separate pools
+tags: edge
+heights: 5 1 5 1 5
+expect: 8
+
+case: uneven pool floor
+tags: edge
+heights: 4 2 0 3 2 5
+expect: 9
+
+case: small pool inside a bigger one
+tags: edge
+heights: 6 2 4 1 3 6
+expect: 14
+
+case: tallest building in the middle
+tags: edge
+heights: 2 0 2 0 5 0 1
+expect: 5
+
+case: maximum heights
+tags: edge
+heights: 10000 0 10000
+expect: 10000
+
+case: plateau inside a pool
+tags: edge
+heights: 4 1 1 1 4
+expect: 9
+
+case: random small #1
+tags: random
+heights: 1 3
+expect: 0
+
+case: random small #2
+tags: random
+heights: 3
+expect: 0
+
+case: random small #3
+tags: random
+heights: 0 1 1 6 5
+expect: 0
+
+case: random small #4
+tags: random
+heights: 10 3 5 6 6 0 6 0 5 8 6 0 7 2 0
+expect: 41
+
+case: random small #5
+tags: random
+heights: 9 0 5 3 2 6 7 1 7 10
+expect: 41
+
+case: random small #6
+tags: random
+heights: 0 8 7 5 7 7 6 6 4 4 1 3
+expect: 4
+
+case: random small #7
+tags: random
+heights: 10 2 8 1 6 7 0 7 10 3 0
+expect: 39
+
+case: random small #8
+tags: random
+heights: 1 2 7 1
+expect: 0
+
+case: random small #9
+tags: random
+heights: 1 5 10 1 0 9
+expect: 17
+
+case: random small #10
+tags: random
+heights: 1 1 10 8 7 5
+expect: 0
+
+case: random small #11
+tags: random
+heights: 5 2 4 0 10
+expect: 9
+
+case: random small #12
+tags: random
+heights: 7 4 4 0
+expect: 0
+
+case: random small #13
+tags: random
+heights: 5 4 4 9 1 8 3 7 6 9 10 9 10 2
+expect: 23
+
+case: random small #14
+tags: random
+heights: 9 3 2 0 7 0 3 5
+expect: 23
+
+case: random small #15
+tags: random
+heights: 8 4 6
+expect: 2
+
+case: random small #16
+tags: random
+heights: 0 5 9
+expect: 0
+
+case: random small #17
+tags: random
+heights: 4 4 5 2 2 0 2 4 3 6 4 2 7 5
+expect: 23
+
+case: random small #18
+tags: random
+heights: 2 5 8 4 7 9 5
+expect: 5
+
+case: random small #19
+tags: random
+heights: 10 5 10 4 5 10 6
+expect: 16
+
+case: random small #20
+tags: random
+heights: 9 8 9 3 6 0 8 9 1
+expect: 20
+
+case: random small #21
+tags: random
+heights: 2 8 4 8 6 2 8 2
+expect: 12
+
+case: random small #22
+tags: random
+heights: 6 4
+expect: 0
+
+case: random small #23
+tags: random
+heights: 6 10 10 6 5
+expect: 0
+
+case: random small #24
+tags: random
+heights: 9 4 9 9 1 8 8 3 7 4 9 0 9
+expect: 37
+
+case: random small #25
+tags: random
+heights: 9 5 4 1 10 8 8 6 5 4 8 1
+expect: 26
+
+case: random small #26
+tags: random
+heights: 9 3 0 1 0 6 1 5 3 4
+expect: 25
+
+case: random small #27
+tags: random
+heights: 10 9 10 10 4 9
+expect: 6
+
+case: random small #28
+tags: random
+heights: 2 9 9 7 10 2 9 7 7
+expect: 9
+
+case: random small #29
+tags: random
+heights: 9 6 3 10 3 8 10 8 6 1 7 9 7 7
+expect: 32
+
+case: random small #30
+tags: random
+heights: 10 0 2 4 9 7 0 4 10 7 2 2 5
+expect: 50

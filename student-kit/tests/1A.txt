@@ -1,0 +1,227 @@
+# CS341 tests for 1A Tea Urn Rush
+# Format is described in README.md. Tags: basic, edge, random, large.
+
+case: example from the problem sheet
+tags: basic
+orders: 3 5 1
+expect: 5
+
+case: no orders at all
+tags: edge
+orders: 0 0 0
+expect: 0
+
+case: a single cup
+tags: edge
+orders: 1 0 0
+expect: 1
+
+case: a single cup of the last drink
+tags: edge
+orders: 0 0 1
+expect: 1
+
+case: only one drink type, nothing can be paired
+tags: edge
+orders: 0 7 0
+expect: 7
+
+case: one pair of different drinks
+tags: edge
+orders: 1 1 0
+expect: 1
+
+case: one cup of each drink
+tags: edge
+orders: 1 1 1
+expect: 2
+
+case: two of each drink
+tags: edge
+orders: 2 2 2
+expect: 3
+
+case: balanced with an odd total
+tags: edge
+orders: 5 5 5
+expect: 8
+
+case: balanced with an even total
+tags: edge
+orders: 4 4 4
+expect: 6
+
+case: first drink dominates
+tags: edge
+orders: 10 1 1
+expect: 10
+
+case: second drink dominates
+tags: edge
+orders: 1 10 1
+expect: 10
+
+case: third drink dominates
+tags: edge
+orders: 1 1 10
+expect: 10
+
+case: largest equals the sum of the other two
+tags: edge
+orders: 6 3 3
+expect: 6
+
+case: largest just above the sum of the other two
+tags: edge
+orders: 7 3 3
+expect: 7
+
+case: largest just below the sum of the other two
+tags: edge
+orders: 5 3 3
+expect: 6
+
+case: two drink types, equal counts
+tags: edge
+orders: 0 5 5
+expect: 5
+
+case: two drink types, unequal counts
+tags: edge
+orders: 0 5 3
+expect: 5
+
+case: already sorted descending
+tags: edge
+orders: 9 6 2
+expect: 9
+
+case: already sorted ascending
+tags: edge
+orders: 2 6 9
+expect: 9
+
+case: random small #1
+tags: random
+orders: 18 9 18
+expect: 23
+
+case: random small #2
+tags: random
+orders: 4 1 1
+expect: 4
+
+case: random small #3
+tags: random
+orders: 17 8 20
+expect: 23
+
+case: random small #4
+tags: random
+orders: 2 8 14
+expect: 14
+
+case: random small #5
+tags: random
+orders: 10 7 2
+expect: 10
+
+case: random small #6
+tags: random
+orders: 10 12 2
+expect: 12
+
+case: random small #7
+tags: random
+orders: 19 16 19
+expect: 27
+
+case: random small #8
+tags: random
+orders: 20 20 1
+expect: 21
+
+case: random small #9
+tags: random
+orders: 8 16 2
+expect: 16
+
+case: random small #10
+tags: random
+orders: 8 2 12
+expect: 12
+
+case: random small #11
+tags: random
+orders: 0 0 9
+expect: 9
+
+case: random small #12
+tags: random
+orders: 19 12 15
+expect: 23
+
+case: random small #13
+tags: random
+orders: 17 0 8
+expect: 17
+
+case: random small #14
+tags: random
+orders: 6 16 8
+expect: 16
+
+case: random small #15
+tags: random
+orders: 1 17 10
+expect: 17
+
+case: random small #16
+tags: random
+orders: 7 9 5
+expect: 11
+
+case: random small #17
+tags: random
+orders: 6 2 10
+expect: 10
+
+case: random small #18
+tags: random
+orders: 11 11 17
+expect: 20
+
+case: random small #19
+tags: random
+orders: 3 0 12
+expect: 12
+
+case: random small #20
+tags: random
+orders: 7 4 19
+expect: 19
+
+case: random small #21
+tags: random
+orders: 13 13 17
+expect: 22
+
+case: random small #22
+tags: random
+orders: 17 8 7
+expect: 17
+
+case: random small #23
+tags: random
+orders: 14 18 5
+expect: 19
+
+case: random small #24
+tags: random
+orders: 6 11 7
+expect: 12
+
+case: random small #25
+tags: random
+orders: 14 0 4
+expect: 14

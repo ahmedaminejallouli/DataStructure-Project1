@@ -1,0 +1,272 @@
+# CS341 tests for 3A Warmest Stretch
+# Format is described in README.md. Tags: basic, edge, random, large.
+
+case: example from the problem sheet
+tags: basic
+temps: 4 -2 7 5 -1 8 3
+k: 3
+expect: 4.0
+
+case: single reading
+tags: edge
+temps: 7
+k: 1
+expect: 7.0
+
+case: single negative reading
+tags: edge
+temps: -3
+k: 1
+expect: -3.0
+
+case: k equals n, whole array
+tags: edge
+temps: 1 2 3 4
+k: 4
+expect: 2.5
+
+case: k is 1, answer is the maximum
+tags: edge
+temps: 3 -1 9 2
+k: 1
+expect: 9.0
+
+case: all negative
+tags: edge
+temps: -5 -3 -8 -1 -4
+k: 2
+expect: -2.5
+
+case: all zero
+tags: edge
+temps: 0 0 0 0
+k: 2
+expect: 0.0
+
+case: best block at the start
+tags: edge
+temps: 9 9 1 1 1
+k: 2
+expect: 9.0
+
+case: best block at the end
+tags: edge
+temps: 1 1 1 9 9
+k: 2
+expect: 9.0
+
+case: non-integer average (integer division trap)
+tags: edge
+temps: 1 2
+k: 2
+expect: 1.5
+
+case: repeating decimal average
+tags: edge
+temps: 1 1 2
+k: 3
+expect: 1.3333333333333333
+
+case: negative non-integer average
+tags: edge
+temps: -1 -2
+k: 2
+expect: -1.5
+
+case: ties between blocks
+tags: edge
+temps: 2 4 4 2 2 4
+k: 2
+expect: 4.0
+
+case: maximum values
+tags: edge
+temps: 10000 10000 10000
+k: 2
+expect: 10000.0
+
+case: minimum values
+tags: edge
+temps: -10000 -10000 -10000
+k: 2
+expect: -10000.0
+
+case: random small #1
+tags: random
+temps: 13 -9 -19 -19 7 6 -12 2 -4 -9 -16
+k: 1
+expect: 13.0
+
+case: random small #2
+tags: random
+temps: 5 -14
+k: 2
+expect: -4.5
+
+case: random small #3
+tags: random
+temps: 9 -6 -20 -14 -1 18 4 8 4 19 -11 -4 -15
+k: 7
+expect: 5.857142857142857
+
+case: random small #4
+tags: random
+temps: -10 8 -17 -15 0 16 1 5 -16 -13 7 -10 -15 20
+k: 10
+expect: -0.5
+
+case: random small #5
+tags: random
+temps: -17 -4 8 15 -6 -12 -10 12 -13 1 -5 -12 14 -18
+k: 9
+expect: -1.0
+
+case: random small #6
+tags: random
+temps: 16 -3 4 5 3 -9
+k: 2
+expect: 6.5
+
+case: random small #7
+tags: random
+temps: -18 -11 15 6 8 -16
+k: 3
+expect: 9.666666666666666
+
+case: random small #8
+tags: random
+temps: 13 -6 6 -9 15 -9 3
+k: 1
+expect: 15.0
+
+case: random small #9
+tags: random
+temps: 19
+k: 1
+expect: 19.0
+
+case: random small #10
+tags: random
+temps: -1 12 2 -7 -4 -4
+k: 5
+expect: 0.4
+
+case: random small #11
+tags: random
+temps: -7 2 -16 -2 -13 14 8 -8 9 -16 -14
+k: 11
+expect: -3.909090909090909
+
+case: random small #12
+tags: random
+temps: -20 6 2 10 2 10 13 -4 -4 1 -10 -4 -9
+k: 3
+expect: 8.333333333333334
+
+case: random small #13
+tags: random
+temps: 12 16 20 -11 19 -3 2 17 7 -13 8 7 6
+k: 10
+expect: 6.6
+
+case: random small #14
+tags: random
+temps: 9 -10 15 11 -8 19 7 -14
+k: 3
+expect: 7.333333333333333
+
+case: random small #15
+tags: random
+temps: -7 1 12 20 -11 4 0
+k: 6
+expect: 4.333333333333333
+
+case: random small #16
+tags: random
+temps: 18 -19 19 -13 -6 -7
+k: 6
+expect: -1.3333333333333333
+
+case: random small #17
+tags: random
+temps: -2 4 -7 -4 -12 8
+k: 3
+expect: -1.6666666666666667
+
+case: random small #18
+tags: random
+temps: -3 -14 9 -19 0 -8 -16 6 -5 8 -4 19
+k: 10
+expect: -1.0
+
+case: random small #19
+tags: random
+temps: -14 16 4 -16 -6 16 -11 -2 -10 -10 7
+k: 3
+expect: 2.0
+
+case: random small #20
+tags: random
+temps: 9 10 9 -12 13 -1 -4 17 13 19 -6 -6 2 14 13
+k: 8
+expect: 8.25
+
+case: random small #21
+tags: random
+temps: 1 -13 -8
+k: 1
+expect: 1.0
+
+case: random small #22
+tags: random
+temps: -20 -6 9 19
+k: 3
+expect: 7.333333333333333
+
+case: random small #23
+tags: random
+temps: -14 9 -5 -6 9 8 -5 13 -13 -2 1 -2 16
+k: 8
+expect: 2.0
+
+case: random small #24
+tags: random
+temps: -1 12 20 -8 6 -3 18 -2
+k: 3
+expect: 10.333333333333334
+
+case: random small #25
+tags: random
+temps: 16 2 3 -13 6 1 16 17 -6
+k: 3
+expect: 11.333333333333334
+
+case: random small #26
+tags: random
+temps: 11 -9 12 -9 18 3 6 15 12 0 -12
+k: 1
+expect: 18.0
+
+case: random small #27
+tags: random
+temps: 13 6 -16 6 17 -19
+k: 6
+expect: 1.1666666666666667
+
+case: random small #28
+tags: random
+temps: 13 -2 -19 -5 8 17 18 -10 15 8
+k: 6
+expect: 9.333333333333334
+
+case: random small #29
+tags: random
+temps: 9
+k: 1
+expect: 9.0
+
+case: random small #30
+tags: random
+temps: 2 -5 19
+k: 1
+expect: 19.0

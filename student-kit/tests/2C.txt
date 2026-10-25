@@ -1,0 +1,401 @@
+# CS341 tests for 2C Reclaim One Plot
+# Format is described in README.md. Tags: basic, edge, random, large.
+
+case: example from the problem sheet
+tags: basic
+grid: 4 4
+1 1 0 0
+1 0 0 1
+0 1 1 1
+0 0 0 1
+expect: 9
+
+case: 1x1 water
+tags: edge
+grid: 1 1
+0
+expect: 1
+
+case: 1x1 land
+tags: edge
+grid: 1 1
+1
+expect: 1
+
+case: all land, nothing to reclaim
+tags: edge
+grid: 3 3
+1 1 1
+1 1 1
+1 1 1
+expect: 9
+
+case: all water
+tags: edge
+grid: 3 3
+0 0 0
+0 0 0
+0 0 0
+expect: 1
+
+case: single land cell
+tags: edge
+grid: 3 3
+0 0 0
+0 1 0
+0 0 0
+expect: 2
+
+case: one water cell left
+tags: edge
+grid: 2 2
+1 1
+1 0
+expect: 4
+
+case: 2x2 checkerboard
+tags: edge
+grid: 2 2
+1 0
+0 1
+expect: 3
+
+case: flip joins four separate cells
+tags: edge
+grid: 3 3
+0 1 0
+1 0 1
+0 1 0
+expect: 5
+
+case: flip touches the same island on all sides (no double counting)
+tags: edge
+grid: 3 3
+1 1 1
+1 0 1
+1 1 1
+expect: 9
+
+case: flip touches the same island on two sides and another island
+tags: edge
+grid: 4 4
+1 1 1 0
+1 0 1 0
+0 0 1 0
+1 1 0 0
+expect: 9
+
+case: stripes: flip joins two rows
+tags: edge
+grid: 5 5
+1 1 1 1 1
+0 0 0 0 0
+1 1 1 1 1
+0 0 0 0 0
+1 1 1 1 1
+expect: 11
+
+case: best flip is on the border
+tags: edge
+grid: 4 4
+0 1 1 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+expect: 3
+
+case: isolated water cell far from land
+tags: edge
+grid: 4 4
+1 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+expect: 2
+
+case: random small #1
+tags: random
+grid: 8 8
+1 1 0 0 0 1 0 0
+0 0 1 1 0 0 1 0
+1 1 0 1 0 1 0 0
+1 1 0 1 1 0 0 1
+1 0 0 0 1 0 0 1
+1 1 1 1 0 1 1 1
+0 1 0 0 0 1 1 1
+1 0 0 0 1 1 1 0
+expect: 28
+
+case: random small #2
+tags: random
+grid: 1 1
+1
+expect: 1
+
+case: random small #3
+tags: random
+grid: 2 2
+1 1
+1 1
+expect: 4
+
+case: random small #4
+tags: random
+grid: 7 7
+1 0 0 1 1 1 1
+0 0 0 0 0 0 0
+0 1 0 0 1 1 1
+1 0 0 0 0 0 1
+0 1 1 0 1 1 0
+0 0 1 0 1 0 0
+1 1 0 0 1 1 0
+expect: 10
+
+case: random small #5
+tags: random
+grid: 4 4
+1 1 0 1
+1 1 0 1
+0 1 1 1
+1 0 1 0
+expect: 12
+
+case: random small #6
+tags: random
+grid: 7 7
+0 1 0 0 1 0 1
+0 0 0 1 1 0 1
+1 0 0 0 0 0 0
+0 1 0 0 1 1 1
+0 0 0 1 1 0 0
+1 0 0 0 0 0 1
+1 1 0 0 0 0 0
+expect: 9
+
+case: random small #7
+tags: random
+grid: 2 2
+0 1
+0 1
+expect: 3
+
+case: random small #8
+tags: random
+grid: 6 6
+1 1 0 0 1 0
+0 1 1 0 1 1
+1 0 0 1 0 1
+0 0 0 0 1 0
+0 1 1 0 1 1
+1 1 1 0 1 0
+expect: 10
+
+case: random small #9
+tags: random
+grid: 4 4
+1 1 1 0
+0 0 0 1
+1 1 1 0
+1 0 0 1
+expect: 9
+
+case: random small #10
+tags: random
+grid: 8 8
+0 0 0 0 0 0 1 0
+0 1 0 0 0 1 0 0
+1 0 1 0 0 0 0 0
+1 0 1 1 0 1 0 0
+1 1 0 1 1 1 1 1
+0 0 0 0 0 0 1 0
+0 0 1 1 0 0 0 0
+0 0 0 0 0 1 0 1
+expect: 16
+
+case: random small #11
+tags: random
+grid: 3 3
+1 1 1
+0 1 0
+1 1 1
+expect: 8
+
+case: random small #12
+tags: random
+grid: 6 6
+0 0 0 0 0 0
+0 1 0 0 1 0
+1 0 0 1 0 0
+1 0 0 0 1 0
+0 0 0 1 0 1
+1 0 0 0 1 0
+expect: 5
+
+case: random small #13
+tags: random
+grid: 7 7
+0 0 0 1 1 1 0
+0 0 0 0 0 0 0
+1 1 0 0 0 1 0
+1 0 0 0 0 0 0
+0 0 0 1 0 1 0
+0 0 0 0 0 0 1
+0 0 0 0 1 0 1
+expect: 5
+
+case: random small #14
+tags: random
+grid: 2 2
+1 1
+0 0
+expect: 3
+
+case: random small #15
+tags: random
+grid: 4 4
+0 1 1 1
+0 0 0 1
+1 1 0 0
+0 0 1 0
+expect: 7
+
+case: random small #16
+tags: random
+grid: 5 5
+1 0 1 0 0
+0 0 1 0 1
+1 0 0 1 1
+1 1 1 0 0
+1 1 1 1 1
+expect: 15
+
+case: random small #17
+tags: random
+grid: 1 1
+1
+expect: 1
+
+case: random small #18
+tags: random
+grid: 1 1
+0
+expect: 1
+
+case: random small #19
+tags: random
+grid: 7 7
+1 1 1 1 0 1 1
+1 0 1 1 0 0 1
+1 1 0 1 1 1 1
+0 1 1 1 0 0 1
+1 1 1 1 1 1 1
+0 1 1 1 1 0 0
+1 1 1 1 1 0 1
+expect: 38
+
+case: random small #20
+tags: random
+grid: 5 5
+0 1 0 0 1
+1 0 0 0 0
+0 0 1 0 0
+0 0 1 0 0
+1 0 0 0 0
+expect: 3
+
+case: random small #21
+tags: random
+grid: 8 8
+0 1 1 0 0 1 1 0
+0 0 0 0 1 1 1 1
+1 0 0 0 1 1 1 1
+1 0 0 0 0 0 0 0
+1 1 1 1 1 0 1 0
+0 0 1 0 0 1 1 1
+0 0 1 1 0 1 0 0
+0 1 0 0 1 1 0 0
+expect: 21
+
+case: random small #22
+tags: random
+grid: 6 6
+1 1 0 1 0 1
+0 1 1 1 1 0
+0 1 1 1 1 1
+1 1 1 1 1 1
+1 1 0 1 0 0
+0 1 1 1 0 1
+expect: 26
+
+case: random small #23
+tags: random
+grid: 7 7
+0 0 0 0 1 1 1
+1 1 1 1 1 1 1
+0 1 1 1 1 1 0
+1 0 0 0 1 0 1
+1 1 1 1 1 1 1
+0 1 1 1 1 0 0
+1 1 0 1 1 1 1
+expect: 36
+
+case: random small #24
+tags: random
+grid: 3 3
+1 0 0
+0 0 1
+1 0 1
+expect: 4
+
+case: random small #25
+tags: random
+grid: 2 2
+0 0
+0 0
+expect: 1
+
+case: random small #26
+tags: random
+grid: 7 7
+1 1 1 1 1 1 1
+1 0 0 1 0 0 0
+1 1 1 0 1 1 0
+1 1 1 1 1 0 1
+0 1 1 0 0 1 1
+1 1 0 1 1 1 1
+0 1 1 1 0 1 0
+expect: 35
+
+case: random small #27
+tags: random
+grid: 5 5
+1 1 1 1 1
+1 0 1 0 1
+0 1 0 0 1
+1 0 1 0 1
+0 1 0 0 1
+expect: 14
+
+case: random small #28
+tags: random
+grid: 3 3
+0 0 0
+0 0 1
+1 0 0
+expect: 2
+
+case: random small #29
+tags: random
+grid: 5 5
+0 1 0 1 1
+1 1 1 1 0
+1 1 0 1 1
+0 0 1 1 0
+1 0 1 0 0
+expect: 16
+
+case: random small #30
+tags: random
+grid: 1 1
+1
+expect: 1
