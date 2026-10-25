@@ -1,0 +1,260 @@
+# CS341 tests for 3C Rolling Peak Monitor
+# Format is described in README.md. Tags: basic, edge, random, large.
+
+case: example from the problem sheet
+tags: basic
+readings: 2 7 3 1 5 4 6 2
+k: 3
+expect: 7 7 5 5 6 6
+
+case: single reading
+tags: edge
+readings: 4
+k: 1
+expect: 4
+
+case: k is 1, output equals input
+tags: edge
+readings: 3 -1 2 5
+k: 1
+expect: 3 -1 2 5
+
+case: k equals n, single output
+tags: edge
+readings: 3 9 1 4
+k: 4
+expect: 9
+
+case: strictly increasing
+tags: edge
+readings: 1 2 3 4 5 6
+k: 3
+expect: 3 4 5 6
+
+case: strictly decreasing
+tags: edge
+readings: 6 5 4 3 2 1
+k: 3
+expect: 6 5 4 3
+
+case: all equal
+tags: edge
+readings: 5 5 5 5 5
+k: 2
+expect: 5 5 5 5
+
+case: all negative
+tags: edge
+readings: -4 -2 -7 -1 -9
+k: 2
+expect: -2 -2 -1 -1
+
+case: duplicate maximum leaves the window
+tags: edge
+readings: 3 3 1 3 1 1
+k: 2
+expect: 3 3 3 3 1
+
+case: maximum at the very end
+tags: edge
+readings: 1 1 1 1 9
+k: 3
+expect: 1 1 9
+
+case: maximum at the very start
+tags: edge
+readings: 9 1 1 1 1
+k: 3
+expect: 9 1 1
+
+case: valley
+tags: edge
+readings: 5 3 1 3 5
+k: 3
+expect: 5 3 5
+
+case: extreme values
+tags: edge
+readings: 1000000000 -1000000000 1000000000
+k: 2
+expect: 1000000000 1000000000
+
+case: random small #1
+tags: random
+readings: 15 -12 -8 -11 12 7 1 -11
+k: 3
+expect: 15 -8 12 12 12 7
+
+case: random small #2
+tags: random
+readings: -7 6 -16
+k: 1
+expect: -7 6 -16
+
+case: random small #3
+tags: random
+readings: -17 8 9 17 -20 3 19 11 6 -6 7 -19 -3 -10
+k: 12
+expect: 19 19 19
+
+case: random small #4
+tags: random
+readings: 7 -9 14 -4 -8 12 -9 18
+k: 2
+expect: 7 14 14 -4 12 12 18
+
+case: random small #5
+tags: random
+readings: -10 1 -12 10 -11 1
+k: 2
+expect: 1 1 10 10 1
+
+case: random small #6
+tags: random
+readings: 7 11 -9 -13
+k: 2
+expect: 11 11 -9
+
+case: random small #7
+tags: random
+readings: 9 8 -14
+k: 3
+expect: 9
+
+case: random small #8
+tags: random
+readings: -11 -16 -9 -13 -13 10 18 -8 -14 13 -16
+k: 7
+expect: 18 18 18 18 18
+
+case: random small #9
+tags: random
+readings: 4 2 -18 -2 -17
+k: 3
+expect: 4 2 -2
+
+case: random small #10
+tags: random
+readings: 20 -6 7 -7 14 20 -19 -10 12 2
+k: 4
+expect: 20 14 20 20 20 20 12
+
+case: random small #11
+tags: random
+readings: 9 -16 3 0 -12
+k: 1
+expect: 9 -16 3 0 -12
+
+case: random small #12
+tags: random
+readings: 1 -20
+k: 1
+expect: 1 -20
+
+case: random small #13
+tags: random
+readings: 17 5 -7 0 8 16 -7 11 -12 -1 4 3
+k: 10
+expect: 17 16 16
+
+case: random small #14
+tags: random
+readings: 20 -8 19 -1 15
+k: 2
+expect: 20 19 19 15
+
+case: random small #15
+tags: random
+readings: 6 -7 15 14 3 16 -12 -9
+k: 3
+expect: 15 15 15 16 16 16
+
+case: random small #16
+tags: random
+readings: -5 -17 15 -17 -15 16 -19 3
+k: 4
+expect: 15 15 16 16 16
+
+case: random small #17
+tags: random
+readings: 16 0
+k: 2
+expect: 16
+
+case: random small #18
+tags: random
+readings: -9 13 -16 -19 5 -16 6 -1 0 -12 2 15 -14 7 20
+k: 1
+expect: -9 13 -16 -19 5 -16 6 -1 0 -12 2 15 -14 7 20
+
+case: random small #19
+tags: random
+readings: 12 -10
+k: 1
+expect: 12 -10
+
+case: random small #20
+tags: random
+readings: -6 20 -2 5 -2 9 -1 -2 10 9 5
+k: 10
+expect: 20 20
+
+case: random small #21
+tags: random
+readings: 12 19
+k: 2
+expect: 19
+
+case: random small #22
+tags: random
+readings: -14 0 -16 5 1 -11 14 -4 -6 -3 -4 -20 -9 -1
+k: 8
+expect: 14 14 14 14 14 14 14
+
+case: random small #23
+tags: random
+readings: 16 -4 12 6
+k: 1
+expect: 16 -4 12 6
+
+case: random small #24
+tags: random
+readings: -5 2
+k: 2
+expect: 2
+
+case: random small #25
+tags: random
+readings: 7 9 17 7 13 12 -13 8 -16 -9 13 13 4 0
+k: 8
+expect: 17 17 17 13 13 13 13
+
+case: random small #26
+tags: random
+readings: -13 -8 3 -9 -11 -16 1 -6 11
+k: 4
+expect: 3 3 3 1 1 11
+
+case: random small #27
+tags: random
+readings: -5
+k: 1
+expect: -5
+
+case: random small #28
+tags: random
+readings: 11 18 -9 -2 -9 -8 18 11 -5 -9
+k: 1
+expect: 11 18 -9 -2 -9 -8 18 11 -5 -9
+
+case: random small #29
+tags: random
+readings: 19 16 -14 -6 -3 -7 -15 15 8 1 9
+k: 6
+expect: 19 16 15 15 15 15
+
+case: random small #30
+tags: random
+readings: -11 -10 10 -13 11 -9 12 -9 -1
+k: 9
+expect: 12
