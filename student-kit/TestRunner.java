@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * CS341 Tiered Array Problem Set: test runner.
  *
- * Put this file, the tests/ folder, and your solution files in one folder, then:
+ * Put t    his file, the tests/ folder, and your solution files in one folder, then:
  *
  *   javac *.java
  *   java TestRunner              (tests every problem it can find)
